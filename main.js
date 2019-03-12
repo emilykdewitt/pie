@@ -45,16 +45,16 @@ const pies = [
         ingredients: 'Pecans, sugar, butter, flour',
         bakeTemp: 5000,
         drinkPairing: 'Milk',
-        imageURL: 'https://cookiesandcups.com/wp-content/uploads/2018/10/pecanpie-3.jpg',
+        imageUrl: 'https://cookiesandcups.com/wp-content/uploads/2018/10/pecanpie-3.jpg',
         instructor: 'Saul',
         iceCream: 'Vanilla',
       },
       {
-        name:'Keylime Pie',
+        name:'Key Lime Pie',
         ingredients: 'lemons, sugar, butter, flour',
         bakeTemp: 5000,
         drinkPairing: 'Water',
-        imageURL: 'https://www.williams-sonoma.com/wsimgs/rk/images/dp/recipe/201851/0020/img38l.jpg',
+        imageUrl: 'https://www.williams-sonoma.com/wsimgs/rk/images/dp/recipe/201851/0020/img38l.jpg',
         instructor: 'Saul',
         iceCream: 'none',
       },
@@ -63,13 +63,15 @@ const pies = [
 const pieBuilder = () => {
     let domString = '';
     pies.forEach((pie) => {
+        domString += `<div class="card">`;
         domString += `<h3>${pie.name}</h3>`;
         domString += `<p>Ingredients: ${pie.ingredients}</p>`;
-        domString += `<p>Bake Temperature: ${pie.bakeTemp}</p>`;
-        domString += `<p>Drink pairing: ${pie.drinkPairing}</p>`;
+        //domString += `<p>Bake Temperature: ${pie.bakeTemp}</p>`;
+        //domString += `<p>Drink pairing: ${pie.drinkPairing}</p>`;
         domString += `<p><img src=${pie.imageUrl}></p>`;
-        domString += `<p>Instructor: ${pie.instructor}</p>`;
-        domString += `<p>Ice Cream Pairing: ${pie.iceCreamPairing}</p>`;
+        //domString += `<p>Instructor: ${pie.instructor}</p>`;
+        //domString += `<p>Ice Cream Pairing: ${pie.iceCreamPairing}</p>`;
+        domString += `</div>`;
     })
     printToDom('pieList', domString);
 };
