@@ -1,61 +1,20 @@
-<!-- # magical
-
-# H1
-## H3
-### H3
-
-##
-Text is just typed into the document.
-
-## Lists
-### Ordered
-1. Item 1  
-1. Item 2  
-1. Item 3  
-
-#### Unordered
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-  - Sub-item 1
-  - Sub-item 2
-
-## Links
-[Google](https://www.google.com)  
-[Link with title](https://www.google.com "Google's Homepage")
+# Pie Project
+This project uses JavaScript Arrays and Methods to display pies and selectively show them based on assigned owner when you click the corresponding button (i.e. clicking 'Zoe' will show the pies that belong to Zoe').
 
 ## Images
-Inline-style:  
-![ImageName](www.google.com/image.jpg)
-
-## Reference-style:
-![ImageName][]
-
-## Syntax highlighting
-```javascript
-let text = "javascript"
-alert(text)
-```
-
-## Checkboxes
-- [ ] Item 1
-- [ ] Item 2
-- [ ] Item 3
-
-Example: -->
-
-# Pie Project
-Makes an array of pies
+![Pie Screenshot](https://raw.githubusercontent.com/emilykdewitt/pie/master/screenshots/pie-project-screenshot.png)
 
 ## Getting Started
 ```
-$git clone https://github.com/nss-evening-cohort-9/pie/
+$ git clone https://github.com/emilykdewitt/pie.git
 ```
 ### Prerequisites
-```
-$npm install 
-```
+
+1. Go to: https://www.npmjs.com/package/http-server  
+1.  Install "http-server"  
+1. Navigate to the project folder in command line interface and type: `http-server -p 8080`  
+1. This will show at: `http://localhost:8080` in your internet browser
+
 
 ## Running
-Browse to pie directory and run http server
+Browse to pie directory and run http server  
