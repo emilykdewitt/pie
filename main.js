@@ -60,9 +60,9 @@ const pies = [
       },
     ];
 
-const pieBuilder = () => {
+const pieBuilder = (monkeybutts) => {
     let domString = '';
-    pies.forEach((pie) => {
+    monkeybutts.forEach((pie) => {
         domString += `<div class="card">`;
         domString += `<h3>${pie.name}</h3>`;
         //domString += `<p>Ingredients: ${pie.ingredients}</p>`;
@@ -77,8 +77,19 @@ const pieBuilder = () => {
 };
 
 const buttonClick = (e) => {
-  console.log('You clicked a button!', e.target.id);
+  const buttonId = e.target.id;
+  const selectedPies = [];
+  pies.forEach((pie) => {
+    if (pie.instructor === buttonId) {
+      selectedPies.push(pie);
+    }
+  });
 
+  if (buttonId === 'All') {
+    pieBuilder(pies);
+  } else {
+    pieBuilder(selectedPies);
+  }
 };
 
 const buttonEvents = () => {
@@ -90,7 +101,7 @@ const buttonEvents = () => {
 
 const init = () => {  
   buttonEvents();
-  pieBuilder();
+  pieBuilder(pies);
 };
 
 init();
