@@ -60,12 +60,12 @@ const pies = [
       },
     ];
 
-const pieBuilder = () => {
+const pieBuilder = (monkeybutts) => {
     let domString = '';
-    pies.forEach((pie) => {
+    monkeybutts.forEach((pie) => {
         domString += `<div class="card">`;
         domString += `<h3>${pie.name}</h3>`;
-        domString += `<p>Ingredients: ${pie.ingredients}</p>`;
+        //domString += `<p>Ingredients: ${pie.ingredients}</p>`;
         //domString += `<p>Bake Temperature: ${pie.bakeTemp}</p>`;
         //domString += `<p>Drink pairing: ${pie.drinkPairing}</p>`;
         domString += `<p><img src=${pie.imageUrl}></p>`;
@@ -76,17 +76,32 @@ const pieBuilder = () => {
     printToDom('pieList', domString);
 };
 
-const buttonClick = () => {
-  console.log('You clicked a button!');
+const buttonClick = (e) => {
+  const buttonId = e.target.id;
+  const selectedPies = [];
+  pies.forEach((pie) => {
+    if (pie.instructor === buttonId) {
+      selectedPies.push(pie);
+    }
+  });
+
+  if (buttonId === 'All') {
+    pieBuilder(pies);
+  } else {
+    pieBuilder(selectedPies);
+  }
 };
 
 const buttonEvents = () => {
   document.getElementById('Zoe').addEventListener('click', buttonClick);
+  document.getElementById('Saul').addEventListener('click', buttonClick);
+  document.getElementById('Michael').addEventListener('click', buttonClick);
+  document.getElementById('All').addEventListener('click', buttonClick);
 };
 
 const init = () => {  
   buttonEvents();
-  pieBuilder();
+  pieBuilder(pies);
 };
 
 init();
